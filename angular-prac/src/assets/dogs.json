@@ -1,0 +1,10 @@
+[
+  { "name": "german Sheperd", "age": 5 },
+  { "name": "Doberman", "age": 5 },
+  { "name": "pug", "age": 5 },
+  { "name": "german Sheperd", "age": 6 },
+  { "name": "Doberman", "age": 8 },
+  { "name": "pug", "age": 2 },
+  { "name": "Bulldog", "age": 3 },
+  { "name": "alskan ", "age": 3 }
+]

@@ -1,0 +1,49 @@
+<div class="parent">
+  <div class="name-details">
+    <h3>Welcome {{ details.name | uppercase }}</h3>
+    <h3>Age: {{ details.age }}</h3>
+    <h3>email: {{ details.email }}</h3>
+    <h3>Nativa: {{ details.native }}</h3>
+    <h3>Mobile : {{ details.phn }}</h3>
+  </div>
+
+  <div class="update-area">
+    <form [formGroup]="formData" (ngSubmit)="updateName()">
+      <label for="username">Username :</label>
+      <input
+        type="text"
+        placeholder="Update name"
+        formControlName="username"
+      /><br /><br />
+      <label for="age">Age</label>
+      <input
+        type="number"
+        placeholder="Update age"
+        formControlName="age"
+      /><br /><br />
+      <label for="email">Email</label>
+      <input
+        type="email"
+        placeholder="Update email"
+        formControlName="email"
+      /><br /><br />
+      <label for="native">Native:</label>
+      <input
+        type="text"
+        placeholder="Update native"
+        formControlName="native"
+      /><br /><br />
+      <label for="phn">Mobile Number:</label>
+      <input
+        type="text"
+        placeholder="Update name"
+        formControlName="phn"
+      /><br />
+
+      <button type="submit" [disabled]="formData.invalid">
+        Update Details
+      </button>
+    </form>
+  </div>
+  details.
+</div>

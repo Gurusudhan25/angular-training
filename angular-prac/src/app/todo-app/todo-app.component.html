@@ -1,0 +1,15 @@
+<div class="todo-box">
+  <h2>Todo-List</h2>
+</div>
+<div class="addtask">
+  <input type="text" placeholder="Enter task" [formControl]="task" /><br />
+  <input type="text" placeholder="Enter time" [formControl]="time" /><br />
+  <input class="btn" type="button" value="Add" (click)="createTask()" />
+</div>
+
+<div *ngIf="status" then #true else #flase>
+  <ng-template class="tasks" *ngFor="let a of taskData; index as i" true>
+    <h1>{{ a }}</h1>
+  </ng-template>
+  <ng-template false> <h1>nothing</h1> </ng-template>
+</div>

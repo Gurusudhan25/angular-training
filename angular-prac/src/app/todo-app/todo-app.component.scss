@@ -1,0 +1,40 @@
+.todo-box {
+  display: block;
+  text-align: center;
+  button {
+    width: 80px;
+    height: 30px;
+    color: black;
+    background-color: lightseagreen;
+    border: none;
+    border-radius: 10px;
+
+    &:hover {
+      color: white;
+      background-color: black;
+    }
+  }
+}
+.addtask {
+  display: block;
+  text-align: center;
+  input {
+    margin: 10px;
+    height: 30px;
+    width: 250px;
+    border-radius: 5px;
+    border-color: black;
+
+    &:hover {
+      border-color: blue;
+    }
+  }
+  .btn {
+    background-color: black;
+    color: white;
+    &:hover {
+      border-color: black;
+    }
+  }
+}
+
