@@ -1,14 +1,8 @@
 <div class="gamelist">
   <h1>Game List</h1>
-  <div
-    class="list-bt"
-    *ngFor="let val of gameList"
-    [class.viewed]="isViewed(val.id)"
-  >
-    <button (click)="navigateTo(val)">
+  <div class="list-bt" *ngFor="let val of gameList">
+    <button (click)="navigateTo(val)" [class.viewed]="isViewed(val.id)">
       {{ val.game }}
     </button>
   </div>
 </div>
-
-

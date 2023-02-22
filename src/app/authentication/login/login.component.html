@@ -1,0 +1,29 @@
+<div class="form-group">
+  <h1 class="heading">Login</h1>
+  <form [formGroup]="formData">
+    <div class="form-control">
+      <input
+        type="text"
+        name="username"
+        formControlName="username"
+        placeholder="Enter username"
+        required
+      />
+    </div>
+
+    <div class="form-control">
+      <input
+        type="password"
+        name="pass"
+        formControlName="password"
+        placeholder="Enter password"
+        required
+      />
+    </div>
+
+    <button type="submit" (click)="checkUsers()">login</button>
+    <div class="nav-signup">
+      <a routerLink="../signup"> Register new Acc?</a>
+    </div>
+  </form>
+</div>

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
-import { ViewedService } from '../viewed.service';
+import { ViewedService } from '../services/viewed.service';
 
 @Component({
   selector: 'app-game-page',

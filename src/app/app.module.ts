@@ -16,6 +16,7 @@ import { UpdateNameComponent } from './update-name/update-name.component';
 import { TodoAppComponent } from './todo-app/todo-app.component';
 import { GamePageComponent } from './game-page/game-page.component';
 import { GameDetailComponent } from './game-detail/game-detail.component';
+import { IndexComponent } from './index/index.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,6 +29,7 @@ import { GameDetailComponent } from './game-detail/game-detail.component';
     TodoAppComponent,
     GamePageComponent,
     GameDetailComponent,
+    IndexComponent,
   ],
   imports: [
     BrowserModule,

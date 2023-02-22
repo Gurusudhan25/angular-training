@@ -1,0 +1,54 @@
+.form-group {
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  button {
+    margin-right: 20px;
+    margin-top: 20px;
+    margin-left: 20px;
+    height: 35px;
+    width: 100px;
+    color: white;
+    background-color: cornflowerblue;
+    font-weight: bolder;
+    border-style: solid;
+    border-color: cornflowerblue;
+    border-radius: 10px;
+    float: left;
+    &:hover {
+      background-color: black;
+      border-color: black;
+    }
+  }
+}
+
+.form-control {
+  margin-right: 20px;
+  margin-top: 20px;
+  margin-left: 20px;
+  input {
+    height: 30px;
+    width: 300px;
+    border-radius: 10px;
+    border-style: dashed;
+    padding: 10px;
+    &:hover {
+      border-color: cornflowerblue;
+    }
+    &:focus {
+      border: none;
+    }
+  }
+}
+
+.nav-login {
+  float: left;
+  margin-right: 20px;
+  margin-top: 33px;
+  margin-left: 40px;
+}
+
+.heading {
+  margin-left: 110px;
+}

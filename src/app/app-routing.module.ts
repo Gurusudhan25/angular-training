@@ -1,52 +1,60 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { ChildRouteComponent } from './child-route/child-route.component';
-import { GermanComponent } from './dogs/german/german.component';
-import { ErrorPageComponent } from './error-page/error-page.component';
-import { FormsComponent } from './forms/forms.component';
-import { HomePageComponent } from './home-page/home-page.component';
-import { RoutingComponent } from './routing/routing.component';
-import { AuthGuardGuard } from './auth-guard.guard';
-import { UpdateNameComponent } from './update-name/update-name.component';
-import { TodoAppComponent } from './todo-app/todo-app.component';
-import { GamePageComponent } from './game-page/game-page.component';
-import { GameDetailComponent } from './game-detail/game-detail.component';
+import { NgModule } from "@angular/core";
+import { RouterModule, Routes } from "@angular/router";
+import { ChildRouteComponent } from "./child-route/child-route.component";
+import { GermanComponent } from "./dogs/german/german.component";
+import { ErrorPageComponent } from "./error-page/error-page.component";
+import { FormsComponent } from "./forms/forms.component";
+import { HomePageComponent } from "./home-page/home-page.component";
+import { RoutingComponent } from "./routing/routing.component";
+import { AuthGuardGuard } from "./guards/auth-guard.guard";
+import { UpdateNameComponent } from "./update-name/update-name.component";
+import { TodoAppComponent } from "./todo-app/todo-app.component";
+import { GamePageComponent } from "./game-page/game-page.component";
+import { GameDetailComponent } from "./game-detail/game-detail.component";
+import { IndexComponent } from "./index/index.component";
 const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: "", component: IndexComponent },
 
-  { path: 'home', component: HomePageComponent },
+  { path: "home", component: HomePageComponent },
   {
-    path: 'german',
+    path: "auth",
+    loadChildren: () =>
+      import("./authentication/authentication.module").then(
+        (m) => m.AuthenticationModule
+      ),
+  },
+  {
+    path: "german",
     component: GermanComponent,
   },
-  { path: 'forms', component: FormsComponent },
+  { path: "forms", component: FormsComponent },
   {
-    path: 'routing/:id/:name',
+    path: "routing/:id/:name",
     component: RoutingComponent,
-    title: 'Routing Page',
+    title: "Routing Page",
   },
   {
-    path: 'rt',
+    path: "rt",
     component: RoutingComponent,
-    title: 'child-route',
+    title: "child-route",
     children: [
       {
-        path: 'first-child',
+        path: "first-child",
         component: ChildRouteComponent,
         canActivate: [AuthGuardGuard],
       },
-      { path: 'second-child', component: ChildRouteComponent },
+      { path: "second-child", component: ChildRouteComponent },
     ],
   },
-  { path: 'updatename', component: UpdateNameComponent, title: 'update' },
+  { path: "updatename", component: UpdateNameComponent, title: "update" },
   {
-    path: 'todo',
+    path: "todo",
     component: TodoAppComponent,
-    title: 'Do-It',
+    title: "Do-It",
   },
-  { path: 'gamelist', component: GamePageComponent },
-  { path: 'gamedetails/:game', component: GameDetailComponent },
-  { path: '**', component: ErrorPageComponent, title: 'Error Page' },
+  { path: "gamelist", component: GamePageComponent },
+  { path: "gamedetails/:game", component: GameDetailComponent },
+  { path: "**", component: ErrorPageComponent, title: "Error Page" },
 ];
 
 @NgModule({

@@ -1,0 +1,45 @@
+<div class="form-group">
+    <h1 class="heading">SignUp</h1>
+  <form [formGroup]="formData">
+    <div class="form-control">
+      <input
+        type="text"
+        name="username"
+        formControlName="username"
+        placeholder="Enter username"
+        required
+      />
+    </div>
+    <div class="form-control">
+      <input
+        type="email"
+        name="email"
+        formControlName="email"
+        placeholder="Enter email"
+        required
+      />
+    </div>
+    <div class="form-control">
+      <input
+        type="password"
+        name="pass1"
+        formControlName="pass1"
+        placeholder="Enter password"
+        required
+      />
+    </div>
+    <div class="form-control">
+      <input
+        type="text"
+        name="pass2"
+        formControlName="pass2"
+        placeholder="Re-Enter password"
+        required
+      />
+    </div>
+    <button type="submit" (click)="onSubmit()">Register</button>
+    <div class="nav-login">
+        <a routerLink="../login">Already has a Acc?</a>
+    </div>
+  </form>
+</div>

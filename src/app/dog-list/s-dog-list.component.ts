@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DogDetailsService } from '../dog-details.service';
+import { DogDetailsService } from '../services/dog-details.service';
 
 @Component({
   selector: 'app-s-dog-list',
