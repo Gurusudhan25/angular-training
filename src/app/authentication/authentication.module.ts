@@ -7,6 +7,8 @@ import { SignupComponent } from "./signup/signup.component";
 import { ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
 import { HomeComponent } from './home/home.component';
+import { MatSlideToggleModule } from "@angular/material/slide-toggle";
+
 
 @NgModule({
   declarations: [LoginComponent, SignupComponent, HomeComponent],
@@ -16,6 +18,7 @@ import { HomeComponent } from './home/home.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    MatSlideToggleModule
   ],
 })
 export class AuthenticationModule {}
