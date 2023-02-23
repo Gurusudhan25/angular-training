@@ -12,53 +12,63 @@ import { TodoAppComponent } from "./todo-app/todo-app.component";
 import { GamePageComponent } from "./game-page/game-page.component";
 import { GameDetailComponent } from "./game-detail/game-detail.component";
 import { IndexComponent } from "./index/index.component";
+import { GuardHomeComponent } from "./guard-practice/guard-home/guard-home.component";
+import { CanmatchGuard } from "./guard-practice/guards/canmatch.guard";
 const routes: Routes = [
-  { path: "", component: IndexComponent },
+    { path: "", component: IndexComponent },
+    { path: "home", component: HomePageComponent },
+    {
+        path: "guardpractice",
+        canMatch: [CanmatchGuard],
+        loadChildren: () =>
+            import("./guard-practice/guard-practice.module").then(
+                (m) => m.GuardPracticeModule
+            ),
+    },
+    {
+        path: "auth",
+        loadChildren: () =>
+            import("./authentication/authentication.module").then(
+                (m) => m.AuthenticationModule
+            ),
+    },
 
-  { path: "home", component: HomePageComponent },
-  {
-    path: "auth",
-    loadChildren: () =>
-      import("./authentication/authentication.module").then(
-        (m) => m.AuthenticationModule
-      ),
-  },
-  {
-    path: "german",
-    component: GermanComponent,
-  },
-  { path: "forms", component: FormsComponent },
-  {
-    path: "routing/:id/:name",
-    component: RoutingComponent,
-    title: "Routing Page",
-  },
-  {
-    path: "rt",
-    component: RoutingComponent,
-    title: "child-route",
-    children: [
-      {
-        path: "first-child",
-        component: ChildRouteComponent,
-        canActivate: [AuthGuardGuard],
-      },
-      { path: "second-child", component: ChildRouteComponent },
-    ],
-  },
-  { path: "updatename", component: UpdateNameComponent, title: "update" },
-  {
-    path: "todo",
-    component: TodoAppComponent,
-    title: "Do-It",
-  },
-  { path: "gamelist", component: GamePageComponent },
-  { path: "gamedetails/:game", component: GameDetailComponent },
-  { path: "**", component: ErrorPageComponent, title: "Error Page" },
+    {
+        path: "german",
+        component: GermanComponent,
+    },
+    { path: "forms", component: FormsComponent },
+    {
+        path: "routing/:id/:name",
+        component: RoutingComponent,
+        title: "Routing Page",
+    },
+    {
+        path: "rt",
+        component: RoutingComponent,
+        title: "child-route",
+        children: [
+            {
+                path: "first-child",
+                component: ChildRouteComponent,
+                canActivate: [AuthGuardGuard],
+            },
+            { path: "second-child", component: ChildRouteComponent },
+        ],
+    },
+    { path: "updatename", component: UpdateNameComponent, title: "update" },
+    {
+        path: "todo",
+        component: TodoAppComponent,
+        title: "Do-It",
+    },
+    { path: "gamelist", component: GamePageComponent },
+    { path: "gamedetails/:game", component: GameDetailComponent },
+    { path: "**", component: ErrorPageComponent, title: "Error Page" },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule],
+    imports: [RouterModule.forRoot(routes)],
+    exports: [RouterModule],
 })
 export class AppRoutingModule {}
