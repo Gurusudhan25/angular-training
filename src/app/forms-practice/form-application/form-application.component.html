@@ -1,0 +1,122 @@
+<div class="container w-25">
+    <!-- <mat-icon matBadge="15" matBadgeColor="warn">home</mat-icon> -->
+    <h2 class="heading">Job Application</h2>
+    <form [formGroup]="formDetails">
+        <div class="container mt-3 personal-details">
+            <div class="form-group">
+                <input
+                    class="form-control"
+                    type="text"
+                    placeholder="Enter Firstname"
+                    formControlName="firstName"
+                    [class.invalid]="
+                        formDetails.controls.firstName.dirty &&
+                        formDetails.controls.firstName.invalid
+                    "
+                    required
+                />
+                <div
+                    *ngIf="
+                        formDetails.controls.firstName.dirty &&
+                        formDetails.controls.firstName.invalid
+                    "
+                    class="text-danger ml-1 mt-1"
+                >
+                    <small>Enter Name more than 3 and less than 8</small>
+                </div>
+            </div>
+            <div class="form-group mt-3">
+                <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Enter Lastname"
+                    formControlName="lastName"
+                />
+            </div>
+            <div class="form-group mt-3">
+                <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Enter age"
+                    formControlName="age"
+                    required
+                />
+            </div>
+            <div
+                *ngIf="
+                    formDetails.controls.age.dirty &&
+                    formDetails.controls.age.invalid
+                "
+                class="text-danger ml-1 mt-1"
+            >
+                <small>Enter Age</small>
+            </div>
+            <div class="container-fluid mt-3">
+                <h3>Choose Degree</h3>
+                <select
+                    class="custom-select"
+                    id="inputGroupSelect02"
+                    formControlName="degree"
+                >
+                    <option selected disabled>Choose Degree</option>
+                    <option value="BE">BE</option>
+                    <option value="BSC">BSC</option>
+                    <option value="ME">ME</option>
+                </select>
+            </div>
+        </div>
+        <div class="container form-group" [formGroup]="addressDetails">
+            <h3 class="mt-3 ml-1">Address:</h3>
+            <input
+                type="text"
+                class="form-control mt-3"
+                placeholder="Enter City"
+                formControlName="city"
+            />
+            <input
+                type="text"
+                class="form-control mt-3"
+                placeholder="Enter state"
+                formControlName="state"
+            />
+        </div>
+        <div class="container skil-region mt-3" formArrayname="skills">
+            <h2>Add Skills</h2>
+            <div
+                *ngFor="let val of skills['controls']; index as i"
+                class="container p-0 m-0"
+            >
+                <div class="row">
+                    <div class="col-sm">
+                        <input
+                            class="form-control skill mt-2"
+                            type="text"
+                            placeholder="Add Skills"
+                            formControlName="i.setValue(event.target.value)"
+                        />
+                    </div>
+                    <div class="col-sm">
+                        <button
+                            (click)="deleteSkill(i)"
+                            class="btn btn-danger mt-2"
+                        >
+                            Delete Skill
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <button class="btn btn-dark mt-3" (click)="addSkill()">
+                Add Skills
+            </button>
+        </div>
+
+        <div>
+            <button class="btn btn-primary mt-3 ml-1" (click)="showDetails()">
+                Submit
+            </button>
+        </div>
+    </form>
+
+    <!-- {{ skills.controls | json }} (change)="just($event, i)" -->
+</div>

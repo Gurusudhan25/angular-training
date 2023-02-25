@@ -12,7 +12,6 @@ import { TodoAppComponent } from "./todo-app/todo-app.component";
 import { GamePageComponent } from "./game-page/game-page.component";
 import { GameDetailComponent } from "./game-detail/game-detail.component";
 import { IndexComponent } from "./index/index.component";
-import { GuardHomeComponent } from "./guard-practice/guard-home/guard-home.component";
 import { CanmatchGuard } from "./guard-practice/guards/canmatch.guard";
 const routes: Routes = [
     { path: "", component: IndexComponent },
@@ -23,6 +22,13 @@ const routes: Routes = [
         loadChildren: () =>
             import("./guard-practice/guard-practice.module").then(
                 (m) => m.GuardPracticeModule
+            ),
+    },
+    {
+        path: "formspractice",
+        loadChildren: () =>
+            import("./forms-practice/forms-practice.module").then(
+                (m) => m.FormsPracticeModule
             ),
     },
     {

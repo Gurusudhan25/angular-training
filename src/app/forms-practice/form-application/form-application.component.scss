@@ -1,0 +1,29 @@
+.heading {
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.ml-1 {
+    margin-left: 10px;
+}
+
+.invalid {
+    border-color: red;
+}
+.alert-danger {
+    margin: 2px;
+    padding: 1px;
+    padding-left: 10px;
+}
+
+.custom-select {
+    width: 100%;
+    // margin-left: 2px;
+    margin-top: 5px;
+    background-color: white;
+    color: black;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 15px;
+    height: 30px;
+}
