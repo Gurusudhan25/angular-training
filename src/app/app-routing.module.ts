@@ -25,6 +25,13 @@ const routes: Routes = [
             ),
     },
     {
+        path: "rxjspractice",
+        loadChildren: () =>
+            import("./rxjs-learning/rxjs-learning.module").then(
+                (m) => m.RxjsLearningModule
+            ),
+    },
+    {
         path: "formspractice",
         loadChildren: () =>
             import("./forms-practice/forms-practice.module").then(

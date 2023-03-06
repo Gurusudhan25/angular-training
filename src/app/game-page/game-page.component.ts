@@ -32,10 +32,10 @@ export class GamePageComponent implements OnInit {
     });
   }
 
-  isViewed(id: string): Boolean {
-    let viewedState: Boolean = false;
+  isViewed(id: string): boolean {
+    let viewedState = false;
     const viewdList = this._view.getView();
-    for (let val of viewdList) {
+    for (const val of viewdList) {
       if (val === id) {
         viewedState = true;
       }

@@ -6,7 +6,7 @@ import { IDog } from './view';
   providedIn: 'root',
 })
 export class DogDetailsService {
-  public url: string = '../assets/dogs.json';
+  public url = '../assets/dogs.json';
   constructor(private _http: HttpClient) {}
 
   getDogs(): Observable<IDog> {

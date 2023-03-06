@@ -13,7 +13,7 @@ export class ViewedService implements OnInit {
       this.viewedList.push(id);
     } else {
       let state = false;
-      for (let val of this.viewedList) {
+      for (const val of this.viewedList) {
         if (val === id) {
           state = true;
         }

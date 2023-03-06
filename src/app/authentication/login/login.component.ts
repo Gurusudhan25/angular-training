@@ -23,9 +23,9 @@ export class LoginComponent implements OnInit {
     });
   }
   checkUsers() {
-    let username = this.formData.value.username;
-    let password = this.formData.value.password;
-    for (let key in this.apiData) {
+    const username = this.formData.value.username;
+    const password = this.formData.value.password;
+    for (const key in this.apiData) {
       if(this.apiData[key].username === username){
         if(this.apiData[key].password === password){
             this._router.navigate(['../homepage'] , {relativeTo: this._route})

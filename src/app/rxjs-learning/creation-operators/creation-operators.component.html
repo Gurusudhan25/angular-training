@@ -1,0 +1,33 @@
+<div class="data">
+    <button class="btn btn-primary" (click)="showajaxdata()">
+        Show Response Data
+    </button>
+    <button class="btn btn-primary m-2" (click)="showajaxdata2()">
+        Show value Data
+    </button>
+    <button class="btn btn-primary m-2" (click)="logNumbers()">
+        Log numbers
+    </button>
+    <button class="btn btn-primary m-2" (click)="fromOperatorArray()">
+        From array operator
+    </button>
+    <button class="btn btn-primary m-2" (click)="fromOperatorPromise()">
+        From Promise operator
+    </button>
+    <button class="btn btn-primary m-2" (click)="defer()">
+        Defer operator
+    </button>
+    <button class="btn btn-primary m-2" (click)="fromEvent()">
+        From Event
+    </button>
+    <button class="btn btn-primary m-2" (click)="generate()">
+        Generate Event
+    </button>
+    <button class="btn btn-primary m-2" (click)="interval()">
+        Inerval Event
+    </button>
+    <button class="btn btn-primary m-2" (click)="range()">Range Event</button>
+    <button class="btn btn-primary m-2" (click)="timer()">time Event</button>
+</div>
+
+<input type="text" [(ngModel)] =  "data">
