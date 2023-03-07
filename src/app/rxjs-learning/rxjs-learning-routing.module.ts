@@ -5,6 +5,7 @@ import { ErrorHandlingComponent } from "./error-handling/error-handling.componen
 import { TransformationComponent } from "./transformation-operators/filter-operators.component";
 import { FilteringOperatorsComponent } from "./filtering-operators/filtering-operators.component";
 import { ObervablesComponent } from "./obervables/obervables.component";
+import { SubjectsComponent } from "./subjects/subjects.component";
 
 const routes: Routes = [
     { path: "", redirectTo: "observables", pathMatch: "full" },
@@ -16,6 +17,7 @@ const routes: Routes = [
             { path: "transformation", component: TransformationComponent },
             { path: "error", component: ErrorHandlingComponent },
             { path: "filter", component: FilteringOperatorsComponent },
+            { path: "subjects", component: SubjectsComponent },
         ],
     },
 ];

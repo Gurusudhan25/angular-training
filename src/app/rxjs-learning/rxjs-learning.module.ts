@@ -8,6 +8,7 @@ import { TransformationComponent } from "./transformation-operators/filter-opera
 import { ErrorHandlingComponent } from "./error-handling/error-handling.component";
 import { FilteringOperatorsComponent } from "./filtering-operators/filtering-operators.component";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { SubjectsComponent } from './subjects/subjects.component';
 
 @NgModule({
     declarations: [
@@ -16,6 +17,7 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
         TransformationComponent,
         ErrorHandlingComponent,
         FilteringOperatorsComponent,
+        SubjectsComponent,
     ],
     imports: [
         CommonModule,
