@@ -12,6 +12,7 @@ const routes: Routes = [
     {
         path: "observables",
         component: ObervablesComponent,
+        data: { animation: 'openClosePage' },
         children: [
             { path: "creation", component: CreationOperatorsComponent },
             { path: "transformation", component: TransformationComponent },

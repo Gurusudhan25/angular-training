@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { ChildrenOutletContexts } from "@angular/router";
 import { Observable, map } from "rxjs";
 
 @Component({
@@ -9,6 +10,7 @@ import { Observable, map } from "rxjs";
 export class ObervablesComponent implements OnInit {
     public page$: Observable<number> = new Observable();
     public users: number[] = [];
+    constructor(private context: ChildrenOutletContexts) {}
 
     ngOnInit() {
         this.page$ = new Observable((observer) => {
@@ -41,5 +43,11 @@ export class ObervablesComponent implements OnInit {
             .subscribe((userNumber) => {
                 console.log(userNumber);
             });
+    }
+
+    getRouteAnimationData() {
+        return this.context.getContext("primary")?.route?.snapshot?.data?.[
+            "animation"
+        ];
     }
 }

@@ -15,7 +15,7 @@
         <button class="btn btn-info m-2" routerLink="subjects">Subject</button>
 
     </div>
-    <div class="container mt-2">
+    <div class="container mt-2" [@routeAnimations]="getRouteAnimationData()">
         <router-outlet></router-outlet>
     </div>
 </div>
